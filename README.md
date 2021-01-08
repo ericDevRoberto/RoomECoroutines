@@ -1,54 +1,17 @@
-TrackMySleepQuality - Starter Code
+Sumary
 ==================================
 
-Starter code for Android Kotlin Fundamentals Codelab 6.1 Room
+Creating the DataBase
+------------------------
 
-Introduction
-------------
+Define your tables as data classes annotated with @Entity. Define properties annotated with @ColumnInfo as columns in the tables.
 
-TrackMySleepQuality is an app for recording sleep data for each night. 
-You can record a start and stop time, assign a quality rating, and clear the database. 
+Define a data access object (DAO) as an interface annotated with @Dao. The DAO maps Kotlin functions to database queries.
 
-In this codelab, working from this starter app,
-you will implement the Room database that holds the sleep data. 
-You will then use instrumented tests to verify that this backend works. 
+Use annotations to define @Insert, @Delete, and @Update functions.
 
+Use the @Query annotation with an SQLite query string as a parameter for any other queries.
 
-Pre-requisites
---------------
+Create an abstract class that has a getInstance() function that returns a database.
 
-You need to know:
-
-* Building a basic user interface (UI) for an Android app, 
-  using an activity, fragments, and views.
-* Navigating between fragments and using Safe Args (a Gradle plugin) 
-  to pass data between fragments.
-* View models, view-model factories, and LiveData and its observers. 
-  These Architecture Components topics are covered in an earlier codelab in this course.
-* A basic understanding of SQL databases and the SQLite language.
-
-
-Getting Started
----------------
-
-1. Download and run the app.
-
-License
--------
-
-Copyright 2019 Google, Inc.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements.  See the NOTICE file distributed with this work for
-additional information regarding copyright ownership.  The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License.  You may obtain a copy of
-the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-License for the specific language governing permissions and limitations under
-the License.
+Use instrumented tests to test that your database and DAO are working as expected. You can use the provided tests as a template.
